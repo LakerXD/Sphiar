@@ -15,7 +15,8 @@ if __name__ == '__main__':
     screen = pygame.display.set_mode(size)
     # формирование кадра:
     # команды рисования на холсте
-    pygame.draw.rect(screen, (255, 0, 0), (1, 1, width-1, height-1))
+    pygame.draw.arc(screen, (255, 255, 255), (0, 0, width, height), 0, 10)
+    pygame.draw.arc(screen, (255, 255, 255), (0, 10, width+10, height), 0, 10)
     # смена (отрисовка) кадра:
     pygame.display.flip()
     # ожидание закрытия окна:
