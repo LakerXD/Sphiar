@@ -6,17 +6,23 @@ if __name__ == '__main__':
     # инициализация Pygame:
     pygame.init()
     # размеры окна:
+    cub = input().split(" ")
     try:
-        size = width, height = int(input()), int(input())
+        if (int(cub[0]) % 4 == 0 and int(cub[0]) <= 100) and (int(cub[1]) >= 0 and int(cub[1]) <= 360):
+            wedth = int(cub[0])
+            shade = int(cub[1])
+        else:
+            print("Неверный формат ввода")
+            pygame.quit()
+            exit()
     except Exception:
         print("Неверный формат ввода")
         pygame.quit()
         exit()
-    screen = pygame.display.set_mode(size)
+    screen = pygame.display.set_mode((300, 300))
     # формирование кадра:
     # команды рисования на холсте
-    pygame.draw.arc(screen, (255, 255, 255), (0, 0, width, height), 0, 10)
-    pygame.draw.arc(screen, (255, 255, 255), (0, 10, width+10, height), 0, 10)
+    pygame.draw.rect(screen, shade, (50, 50, 100, 100))
     # смена (отрисовка) кадра:
     pygame.display.flip()
     # ожидание закрытия окна:
